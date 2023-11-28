@@ -2,9 +2,10 @@
 #include <stdlib.h>
 
 /**
- *
- *
- *
+ * insert_node - function name
+ * @head: first node
+ * @number: integer parameter
+ * Return: always success
  */
 listint_t *insert_node(listint_t **head, int number)
 {
