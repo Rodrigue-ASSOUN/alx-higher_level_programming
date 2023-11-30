@@ -3,7 +3,8 @@ from add_0 import add
 
 a = 1
 b = 2
-print(f"{a} + {b} = {a + b}")
+result = add(a, b)
+print("{} + {} = result{}".format(a, b)
 
 if __name__ = "__main__":
     pass
