@@ -7,7 +7,7 @@ if length == 0:
     print("0 arguments.")
 else:
     print("{} arguments:".format(length))
-    for i, arg in enumerate(arguments, start = 1):
+    for i, arg in enumerate(arguments, start=1):
         print("{}: {}".format(i, arg))
 
 if __name__ == "__main__":
