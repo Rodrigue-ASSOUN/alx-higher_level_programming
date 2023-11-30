@@ -6,7 +6,7 @@ length = len(arguments)
 if length == 0:
     print("0 arguments.")
 else:
-    print("{} arguments:".format(length))
+    print("{} argument(s):".format(length))
     for i, arg in enumerate(arguments, start=1):
         print("{}: {}".format(i, arg))
 
