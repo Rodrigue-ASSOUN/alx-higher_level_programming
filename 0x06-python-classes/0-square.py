@@ -4,6 +4,7 @@ Square module
 
 """
 
+
 class Square:
     """Square class
     Creating an empty square
