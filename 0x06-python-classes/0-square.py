@@ -1,6 +1,12 @@
 #!/usr/bin/python3
+"""
+Square module
+
+"""
+
 class Square:
-    """Creating an empty square
+    """Square class
+    Creating an empty square
 
     """
     pass
