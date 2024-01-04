@@ -1,8 +1,11 @@
+#!/usr/bin/python3
+
+"""Rectangle class."""
+
+
 class Rectangle:
     """A simple rectangle."""
     number_of_instances = 0
-
-
 
     def __init__(self, width=0, height=0):
         """
