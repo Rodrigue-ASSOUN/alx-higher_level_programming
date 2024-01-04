@@ -1,6 +1,3 @@
-"""
-Real definition of a rectangle with width, height, area and peramater
-"""
 class Rectangle:
     """
     Instantiation with optional width and height
@@ -57,7 +54,7 @@ class Rectangle:
     """
     # AREA
     Public instance method: def area(self): that returns the rectangle area
-    
+
     #PERIMETER
     Public instance method: def perimeter(self):
         that returns the rectangle perimeter:
@@ -67,6 +64,4 @@ class Rectangle:
         return area
 
     def perimeter(self):
-        if width or height == 0:
-
-            
+        if width or height == 0:            
