@@ -12,7 +12,8 @@ class Rectangle:
         """
         self.width = width
         self.height = height
-
+        Rectangle.number_of_instances += 1
+    
     @property
     def width(self):
         """Get the width of the rectangle."""
@@ -61,3 +62,8 @@ class Rectangle:
         """should return a string representation of the rectangle to be able
             to recreate a new instance by using eval()"""
         return f"Rectangle({self.__width}, {self.__height})"
+
+    def __del__(self):
+        """destructor"""
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
