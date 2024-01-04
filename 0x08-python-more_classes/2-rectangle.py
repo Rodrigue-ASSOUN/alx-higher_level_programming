@@ -1,5 +1,5 @@
 """
-Real definition of a rectangle
+Real definition of a rectangle with width, height, area and peramater
 """
 class Rectangle:
     """
@@ -35,7 +35,7 @@ class Rectangle:
     @property
     def width(self):
         self.__width = width
-    
+
     @width.setter
     def width(self, value):
         if width is not int:
@@ -53,3 +53,20 @@ class Rectangle:
             raise TypeError("height must be an integer")
         if height < 0:
             raise ValueError("height must be >= 0")
+
+    """
+    # AREA
+    Public instance method: def area(self): that returns the rectangle area
+    
+    #PERIMETER
+    Public instance method: def perimeter(self):
+        that returns the rectangle perimeter:
+            if width or height is equal to 0, perimeter is equal to 0
+    """
+    def area(self):
+        return area
+
+    def perimeter(self):
+        if width or height == 0:
+
+            
