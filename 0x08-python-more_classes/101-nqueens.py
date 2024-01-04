@@ -1,39 +1,55 @@
+#!/usr/bin/python3
 import sys
 
-def solve_n_queens(n):
-    def can_place(pos, ocuppied_positions):
-        for i in range(len(ocuppied_positions)):
-            if ocuppied_positions[i] == pos or \
-                ocuppied_positions[i] - i == pos - len(ocuppied_positions) or \
-                ocuppied_positions[i] + i == pos + len(ocuppied_positions):
-                return False
-        return True
 
-    def place_queen(n, index, ocuppied_positions):
-        if index == n:
-            return [ocuppied_positions]
-        else:
-            result = []
-            for pos in range(n):
-                if can_place(pos, ocuppied_positions):
-                    result += place_queen(n, index + 1, ocuppied_positions + [pos])
-            return result
+def is_safe(board, row, col, n):
+    for i in range(row):
+        if board[i] == col or \
+           board[i] - i == col - row or \
+           board[i] + i == col + row:
+            return False
+    return True
 
-    return place_queen(n, 0, [])
 
-if __name__ == "__main__":
+def print_solution(board):
+    solution = [[i, board[i]] for i in range(len(board))]
+    print(solution)
+
+
+def solve_nqueens(board, row, n):
+    if row == n:
+        print_solution(board)
+        return
+
+    for col in range(n):
+        if is_safe(board, row, col, n):
+            board[row] = col
+            solve_nqueens(board, row + 1, n)
+
+
+def main():
+    # Check if the correct number of arguments is provided
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
         sys.exit(1)
+
     try:
         N = int(sys.argv[1])
     except ValueError:
         print("N must be a number")
         sys.exit(1)
+
+    # Check if N is greater or equal to 4
     if N < 4:
         print("N must be at least 4")
         sys.exit(1)
 
-    solutions = solve_n_queens(N)
-    for solution in solutions:
-        print(solution)
+    # Initialize the chessboard
+    chessboard = [0 for _ in range(N)]
+
+    # Solve and print solutions
+    solve_nqueens(chessboard, 0, N)
+
+
+if __name__ == "__main__":
+    main()
