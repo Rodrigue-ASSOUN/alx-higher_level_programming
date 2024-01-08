@@ -1,14 +1,20 @@
 #!/usr/bin/python3
-"""module improve Geometry"""
+"""
+This module contains one class: BaseGeometry
+"""
 
 
 class BaseGeometry:
-    """raises an Exception with the message area() is not implemented"""
+    """ contains two public instance methods """
     def area(self):
-        """raise Exception area() is not implemented"""
+        """
+        raises an Exception with the message area() is not implemented
+        """
         raise Exception("area() is not implemented")
+
     def integer_validator(self, name, value):
-        if not isinstance(value, int):
+        """ validates value """
+        if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
