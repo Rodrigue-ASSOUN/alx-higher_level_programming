@@ -3,4 +3,5 @@
 
 
 class BaseGeometry:
+    """Geometry module for empty class"""
     pass
