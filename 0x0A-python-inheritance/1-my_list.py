@@ -1,10 +1,15 @@
 #!/usr/bin/python3
-"""module to inherit from a list"""
+"""Module Mylist
+Creates a class inheriting from list class
+"""
 
 
-class MyList:
-    """class to list in ascending order"""
+class MyList(list):
+    """Class MyList inherits from list"""
 
     def print_sorted(self):
-        """print in ascending order"""
-        print(sorted(self))
+        """Prints the list, in ascending order"""
+
+        new_list = self[:]
+        new_list.sort()
+        print("{}".format(new_list))
