@@ -4,7 +4,6 @@
 Rectangle = __import__("9-rectangle").Rectangle
 
 
-"""class for square"""
 class Square(Rectangle):
     """
     Instantiation with size: def __init__(self, size)::
@@ -19,7 +18,7 @@ class Square(Rectangle):
 
     def area(self):
         """the area() method must be implemented"""
-        return self.__size *  self.__size
+        return self.__size * self.__size
 
     def __str__(self):
         """
