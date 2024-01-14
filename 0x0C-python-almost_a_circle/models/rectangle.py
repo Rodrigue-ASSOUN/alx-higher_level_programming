@@ -10,10 +10,10 @@ class Rectangle(Base):
 
     """
     def __init__(self, width, height, x=0, y=0, id=None):
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
     @property
@@ -32,7 +32,7 @@ class Rectangle(Base):
             <name of the attribute> must be > 0.
         Example: width must be > 0
         """
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
@@ -46,7 +46,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """ height setter """
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
@@ -80,36 +80,69 @@ class Rectangle(Base):
 
     def area(self):
         """ returns the area value of the Rectangle instance"""
-        return self.width * self.height
+        return (self.__width * self.__height)
 
     def display(self):
-        """ rints in stdout the Rectangle instance with the character # """
-        print("\n" * self.__y, end="")
-        for _ in range(self.height):
-            print(" " * self.__x, end="")
-            print("#" * self.width)
+        """Displays the rectangle using # """
+        for y in range(self.y):
+            print("")
+        for row in range(self.__height):
+            for x in range(self.x):
+                print(" ", end="")
+            for column in range(self.__width):
+                print("#", end="")
+            print()
 
+    def display(self):
+        """Displays the rectangle using # """
+        for y in range(self.y):
+            print("")
+        for row in range(self.__height):
+            for x in range(self.x):
+                print(" ", end="")
+            for column in range(self.__width):
+                print("#", end="")
+            print()
+            
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
                                                             self.id, self.__x,
                                                             self.__y, self.__width,
                                                             self.__height)
 
-    def update(self, *args):
-        """
-        that assigns an argument to each attribute
-        """
-        if len(args) > 1:
-            self.id = args[0]
+    def update(self, *args, **kwargs):
+        """Update the Rectangle"""
+        if args and len(args) != 0:
+            a = 0
+            for arg in args:
+                if a == 0:
+                    if arg is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif a == 1:
+                    self.width = arg
+                elif a == 2:
+                    self.height = arg
+                elif a == 3:
+                    self.x = arg
+                elif a == 4:
+                    self.y = arg
+                a += 1
 
-        if len(args) > 2:
-            self.width = args[1]
+        elif kwargs and len(kwargs) != 0:
+            for k, v in kwargs.items():
+                if k == "id":
+                    if v is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = v
+                elif k == "width":
+                    self.width = v
+                elif k == "height":
+                    self.height = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
 
-        if len(args) > 3:
-            self.height = args[2]
-
-        if len(args) > 4:
-            self.x = args[3]
-
-        if len(args) > 5:
-            self.y = args[4]
