@@ -64,6 +64,9 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
+        """Sets the value for x"""
+        if (type(value) is not int):
+            raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
@@ -74,6 +77,9 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
+        """Sets the value for y"""
+        if (type(value) is not int):
+            raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
@@ -93,17 +99,6 @@ class Rectangle(Base):
                 print("#", end="")
             print()
 
-    def display(self):
-        """Displays the rectangle using # """
-        for y in range(self.y):
-            print("")
-        for row in range(self.__height):
-            for x in range(self.x):
-                print(" ", end="")
-            for column in range(self.__width):
-                print("#", end="")
-            print()
-            
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
                                                             self.id, self.__x,
@@ -111,7 +106,7 @@ class Rectangle(Base):
                                                             self.__height)
 
     def update(self, *args, **kwargs):
-        """Update the Rectangle"""
+        """Update the Rectangle with args and kwargs"""
         if args and len(args) != 0:
             a = 0
             for arg in args:
@@ -131,6 +126,7 @@ class Rectangle(Base):
                 a += 1
 
         elif kwargs and len(kwargs) != 0:
+            """dealing with kwargs"""
             for k, v in kwargs.items():
                 if k == "id":
                     if v is None:
@@ -146,3 +142,11 @@ class Rectangle(Base):
                 elif k == "y":
                     self.y = v
 
+    def to_dictionary(self):
+        """Returns the dictionary representation of a Rectangle"""
+
+        obj_dictionary = {'id': self.id, 'width': self.__width,
+                          'height': self.__height, 'x': self.__x,
+                          'y': self.__y}
+
+        return obj_dictionary
