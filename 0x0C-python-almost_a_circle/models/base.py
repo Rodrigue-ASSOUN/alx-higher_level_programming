@@ -5,6 +5,7 @@ import json
 import os
 import turtle
 
+
 class Base:
     """ private class attribute """
     __nb_objects = 0
@@ -14,7 +15,7 @@ class Base:
         if id is not None, assign the public instance attribute id
         with this argument value - you can assume id is an integer
         and you don’t need to test the type of it
-        otherwise, increment __nb_objects and assign the new value 
+        otherwise, increment __nb_objects and assign the new value
         to the public instance attribute id
         """
         if id is not None:
@@ -71,7 +72,7 @@ class Base:
         a = "{}.json".format(cls.__name__)
         instance_list = []
         dictionary_list = []
-        
+
         if os.path.exists(a):
             with open(a, "r") as f:
                 my_str = f.read()
