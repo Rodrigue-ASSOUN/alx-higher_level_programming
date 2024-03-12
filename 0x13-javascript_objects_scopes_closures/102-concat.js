@@ -8,4 +8,3 @@ const content2 = fs.readFileSync(sourceFilePath2, 'utf8');
 const concatenatedContent = `${content1.trim()}\n${content2.trim()}`;
 
 fs.writeFileSync(destinationFilePath, concatenatedContent);
-
