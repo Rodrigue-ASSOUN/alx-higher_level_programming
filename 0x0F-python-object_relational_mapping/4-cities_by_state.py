@@ -7,7 +7,7 @@ if __name__ == "__main__":
             user=argv[1], password=argv[2], database=argv[3], host="localhost", port=3306)
 
     cursor = connection.cursor()
-    cursor.execute("SELECT * FROM cities ORDER BY cities.id ASC")
+    cursor.execute("SELECT cities.id, cities.name, states.name FROM cities JOIN states ON cities.state_id = states.id ORDER BY cities.id ASC")
 
     result = cursor.fetchall()
     for x in result:
