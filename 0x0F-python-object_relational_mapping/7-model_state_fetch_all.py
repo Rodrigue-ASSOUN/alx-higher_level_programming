@@ -4,10 +4,10 @@
     script that lists all State objects from the database hbtn_0e_6_usa
 """
 
+import sys
 from model_state import Base, State
-from SQLAlchemy import  create_engine
+from sqlalchemy import  create_engine
 from sqlalchemy.orm import sessionmaker
-from sys import argv
 
 if __name__ == "__main__":
     """
@@ -28,4 +28,4 @@ if __name__ == "__main__":
 
     results = session.query(State).order_by(State.id)
     for state in results:
-        print("{}: {}".format(state.id, state.name)
+        print("{}: {}".format(state.id, state.name))
