@@ -1,6 +1,17 @@
 #!/usr/bin/python3
+"""
+This script lists all states with
+a `name` starting with the letter `N`
+from the database `hbtn_0e_0_usa`.
+"""
+
 import MySQLdb
 from sys import argv
+
+"""
+Access to the database and get the states
+from the database.
+"""
 
 if __name__ == "__main__":
     connection = MySQLdb.connect(
@@ -9,7 +20,7 @@ if __name__ == "__main__":
             database=argv[3],
             host="localhost",
             port=3306
-            )
+    )
     cursor = connection.cursor()
     cursor.execute("SELECT DISTINCT * from states WHERE name LIKE 'N%' ORDER BY states.id ASC LIMIT 2")
     results = cursor.fetchall()
