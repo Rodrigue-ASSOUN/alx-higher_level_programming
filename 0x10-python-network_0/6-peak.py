@@ -1,23 +1,12 @@
 #!/usr/bin/python3
 """ function that finds a peak in a list of unsorted integers."""
 
+
 def find_peak(list_of_integers):
-     """
-    Find a peak element in a list of integers.
+    """Find a peak element in a list of integers."""
+    if not list_of_integers:
+        return None
 
-    A peak element is an element that is greater than its neighbors.
-    This function uses a binary search approach to find a peak element,
-    so its time complexity is O(log(n)), where n is the length of the input list.
-
-    Args:
-        list_of_integers (list): The list of integers.
-
-    Returns:
-        int: A peak element in the list.
-
-    Raises:
-        ValueError: If the list is empty.
-    """
     low = 0
     high = len(list_of_integers) - 1
 
@@ -29,4 +18,3 @@ def find_peak(list_of_integers):
             high = mid
 
     return list_of_integers[low]
-
