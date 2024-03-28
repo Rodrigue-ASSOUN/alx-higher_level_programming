@@ -1,14 +1,23 @@
 #!/usr/bin/python3
-"""10. Time for an interview!"""
+"""10 most recent commits on a given GitHub repository.
+"""
 import sys
 import requests
 
 if __name__ == "__main__":
     repository_name = sys.argv[1]
     owner_name = sys.argv[2]
-    response = requests.get(
-        'https://developer.github.com/v3/repos/commits/',
-        auth=(
-            repository_name,
-            owner_name))
-    print(response.json().get("id, name"))
+    
+    url = "https://api.github.com/repos/{}/{}/commits".format(
+        owner_name, repository_name)
+
+    response = requests.get(url, auth=(owner_name, repository_name))
+    commit_list = response.json()
+    
+    try:
+        for i in range(10):
+            print("{}: {}".format(
+                commit_list[i]["sha"],
+                commit_list[i]["commit"]["author"]["name"]))
+    except IndexError:
+        pass
