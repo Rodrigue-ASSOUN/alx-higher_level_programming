@@ -1,16 +1,16 @@
 #!/usr/bin/python3
-
-import urllib.request
-import urllib.error
+""" Error code #0 """
 import sys
+import urllib.error
+import urllib.request
+
 
 if __name__ == "__main__":
     url = sys.argv[1]
-    try:
-        with urllib.request.urlopen(url) as response:
-            response = response.read()
-            decoded_data = response.decode("utf-8")
-            print(decoded_data)
 
+    request = urllib.request.Request(url)
+    try:
+        with urllib.request.urlopen(request) as response:
+            print(response.read().decode("ascii"))
     except urllib.error.HTTPError as e:
-        print("Error code: ", e.code)
+        print("Error code: {}".format(e.code))
