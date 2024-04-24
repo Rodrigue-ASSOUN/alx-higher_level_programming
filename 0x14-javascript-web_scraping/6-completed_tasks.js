@@ -4,16 +4,15 @@ const request = require('request');
 
 const url = process.argv[2];
 
-request.get(url, (error, response, body) => {
+request.get(url, { json: true }, (error, response, body) => {
   if (error) {
     console.log(error);
     return;
   }
 
-  const obj = JSON.parse(body);
   const dict = {};
 
-  obj.forEach((todo) => {
+  body.forEach((todo) => {
     if (todo.completed) {
       if (!dict(todo.userId)) {
         dict[todo.userId] = 1;
