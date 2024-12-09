@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e03a1fd9-e4d9-407c-8b9d-6c385aeffce2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0x00-python-hello_world/2-print.py" beforeDir="false" afterPath="$PROJECT_DIR$/0x00-python-hello_world/2-print.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0x0B-python-input_output/2-append_write.py" beforeDir="false" afterPath="$PROJECT_DIR$/0x0B-python-input_output/2-append_write.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/alx-higher_level_programming" beforeDir="false" afterPath="$PROJECT_DIR$/alx-higher_level_programming" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/alx-higher_level_programming/0x00-python-hello_world/0-run" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/alx-higher_level_programming/0x00-python-hello_world/1-run_inline" beforeDir="false" />
@@ -1576,11 +1579,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/alx-higher_level_programming" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2ptjS9Ezfs0b9TuRgyis3PXxYID" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -1589,13 +1592,15 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.0-main.executor": "Run",
+    "Python.0-read_file.executor": "Run",
+    "Python.1-write_file.executor": "Run",
     "Python.100-write.executor": "Run",
     "Python.2-main.executor": "Run",
     "Python.2-print.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/RODRIGUE/OneDrive/Programmation/open source/python/alx-higher_level_programming"
   }
 }]]></component>
